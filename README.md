@@ -20,6 +20,7 @@ Aplicativo construído em React Native ...
 *  TypeScript
 *  Expo
 *  Apollo Client
+*  ...
 
 ###
 &nbsp;
