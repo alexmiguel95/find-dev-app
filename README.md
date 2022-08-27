@@ -37,15 +37,15 @@ Criar um aplicativo utilizando React Native, Apollo Client com Typescript onde p
 
 > **Requisitos para rodar o projeto** 
 > * YARN
-> * NODE
+> * NODE (versão min 14)
 
 
 ```bash
 # Clone o projeto em sua máquina
-$ git clone https://github.com/alexmiguel95/app-rick-and-morty.git
+$ git clone https://github.com/alexmiguel95/find-dev-app
 
 # Acesse a pasta do projeto no seu terminal
-$ cd rick-and-morty
+$ cd find-dev-app
 
 # Instale as dependências
 $ yarn
@@ -76,7 +76,22 @@ $ yarn
 &nbsp;
 
 <h2 align="left">CONTRIBUIR COM O PROJETO</h2>
-...
+
+> **Requisitos** 
+> * YARN
+> * NODE (versão min 14)
+> * GIT
+
+```bash
+# Clone o projeto em sua máquina
+$ git clone https://github.com/alexmiguel95/find-dev-app
+
+# Acesse a pasta do projeto no seu terminal
+$ cd find-dev-app
+
+# Instale as dependências
+$ yarn
+```
 
 &nbsp;
 &nbsp;
