@@ -3,7 +3,7 @@
 ###
 
 
-Aplicativo construído em React Native.
+Aplicativo construído em React Native ...
 
 <p align="center">
   <img src="/demonstration.gif" width="620">
