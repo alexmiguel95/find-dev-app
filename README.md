@@ -1,27 +1,15 @@
-<h1 align="left">Rick and Morty</h1>
+<h1 align="left">Find Dev</h1>
 
 ###
 
 
-Aplicativo construído em React Native que consome a api pública do [Rick and Morty GraphQL](https://rickandmortyapi.com/documentation/) listando os detalhes de cada personagem.
+Aplicativo construído em React Native.
 
 <p align="center">
   <img src="/demonstration.gif" width="620">
 </p>
 
 *********************************************************************************************************
-
-&nbsp;
-
-###
-
-<h2 align="left">API</h2>
-
-###
-
-https://rickandmortyapi.com/documentation/
-
-###
 
 &nbsp;
 &nbsp;
@@ -31,18 +19,15 @@ https://rickandmortyapi.com/documentation/
 *  React Native
 *  TypeScript
 *  Expo
-*  Axios
-*  Styled Components
-* Apollo Client
-* Redux Toolkit
+*  Apollo Client
+
 ###
 &nbsp;
 <h2 align="left">REQUISITOS</h2>
-Criar um aplicativo utilizando React Native, Apollo Client, Redux Toolkit com Typescript onde possamos:
+Criar um aplicativo utilizando React Native, Apollo Client com Typescript onde possamos:
 
-* Listar todos os personagens do desenho Rick and Morty mostrando a foto e nome de cada personagem
-* Deve ser possível favoritar personagens
-* Ao clicar em um dos itens da lista, deve mostrar um modal com mais detalhes do personagem
+* ...
+* ...
 
 
 &nbsp;
