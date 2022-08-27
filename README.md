@@ -5,6 +5,7 @@
 
 Aplicativo construído em React Native ...
 
+Add gif...
 <p align="center">
   <img src="/demonstration.gif" width="620">
 </p>
@@ -97,7 +98,12 @@ $ yarn
 &nbsp;
 
 <h2 align="left">DESENVOLVEDORES</h2>
-...
+Alex Miguel
+&nbsp;
 
-&nbsp;
-&nbsp;
+https://www.linkedin.com/in/alexmiguel95
+<br />
+https://github.com/alexmiguel95
+###
+
+...
