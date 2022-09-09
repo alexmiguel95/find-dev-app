@@ -20,13 +20,14 @@ Add gif...
 *  React Native
 *  TypeScript
 *  Expo
-*  Apollo Client
+*  Styled Components
+*  Axios
 *  ...
 
 ###
 &nbsp;
 <h2 align="left">REQUISITOS</h2>
-Criar um aplicativo utilizando React Native, Apollo Client com Typescript onde possamos:
+Criar um aplicativo utilizando React Native com Typescript onde possamos:
 
 * ...
 * ...
