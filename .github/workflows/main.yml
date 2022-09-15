@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  pull_request:
+    branches: 
+      - developer
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v3
+
+      # Define o node mais recente para a máquina virtual
+      - name: Set up Node.js
+      - uses: actions/setup-node@master
+ 
+      - uses: c-hive/gha-yarn-cache@v1
+       
+      # Define o yarn para instalar as dependências do projeto. Ele usa as versões que   estão no package.json
+      - name: Install dependencies
+        run: yarn
+
+      # Coloque o mesmo comando que está configurado no package.json para rodar os testes
+      - name: Run tests
+        run: yarn test
