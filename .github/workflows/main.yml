@@ -14,9 +14,9 @@ jobs:
         
       # Define a versão do Node da máquina virtual como 14
       - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14.x
+        uses: actions/setup-node@master
+        
+      - uses: c-hive/gha-yarn-cache@v1
 
       # Define o yarn para instalar as dependências do projeto. Ele usa as versões que   estão no package.json
       - name: Install dependencies
