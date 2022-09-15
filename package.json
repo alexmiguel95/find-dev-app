@@ -8,7 +8,8 @@
         "ios": "expo run:ios",
         "web": "expo start --web",
         "clean": "react-native-clean-project --keep-brew --keep-pods",
-        "test": "jest --watch"
+        "test": "jest --watch",
+        "test-ci": "jest"
     },
     "dependencies": {
         "@types/axios": "^0.14.0",
