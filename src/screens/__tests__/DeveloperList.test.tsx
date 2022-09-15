@@ -5,6 +5,6 @@ describe('src/components/EnviaLance', () => {
     it('deve enviar o lance quando o botão for pressionado', async () => {
         const { getByText } = render(<DeveloperList />);
 
-        expect(getByText("Alex")).toBeTruthy();
+        expect(getByText("Alex Miguel")).toBeTruthy();
     });
 });
