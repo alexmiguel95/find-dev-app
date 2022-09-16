@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FlatList, Text } from 'react-native';
+import { FlatList } from 'react-native';
 import styled from 'styled-components/native';
 import { IDeveloper } from '../models/developer';
 import developerService from '../service/developer.service';
@@ -11,8 +11,7 @@ const DeveloperList = () => {
         developerService.getAllDeveloper().then(setDeveloperList);
     }, []);
 
-    // return <FlatList data={developerList} renderItem={item => <>{item.item.name}</>} />;
-    return <Text>Alex Miguel</Text>
+    return <FlatList data={developerList} renderItem={item => <>{item.item.name}</>} />;
 };
 
 export default DeveloperList;
