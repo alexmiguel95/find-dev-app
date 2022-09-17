@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, ListRenderItem, View } from 'react-native';
+import { ActivityIndicator, FlatList, ListRenderItem, Pressable, View } from 'react-native';
 import styled, { useTheme } from 'styled-components/native';
 import { IDeveloper, IStack } from '../models/developer';
 import developerService from '../service/developer.service';
@@ -7,12 +7,17 @@ import WhatsappSvg from '../assets/icons/whatsapp.svg';
 import GithubSvg from '../assets/icons/github.svg';
 import LinkdinSvg from '../assets/icons/linkdin.svg';
 import StarActiveSvg from '../assets/icons/star-active.svg';
+import StarDisabledSvg from '../assets/icons/star-disabled.svg';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const favoritesKey = '@finddev:favoriteslist';
 
 const DeveloperList = () => {
     const theme = useTheme();
 
     const [developerList, setDeveloperList] = useState<IDeveloper[]>([]);
     const [stacks, setStacks] = useState<IStack[]>([]);
+    const [listFavoriteId, setListFavoriteId] = useState<number[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
     useEffect(() => {
@@ -22,12 +27,38 @@ const DeveloperList = () => {
     useEffect(() => {
         if (stacks.length > 0) {
             developerService.getAllDeveloper().then(response => {
-                response.map(developerData => developerData.stack = stacks.filter(stack => stack.id === developerData.stack)[0].label)
+                response.map(developerData => (developerData.stack = stacks.filter(stack => stack.id === developerData.stack)[0].label));
                 setDeveloperList(response);
                 setIsLoading(false);
             });
         }
     }, [stacks]);
+
+    useEffect(() => {
+        const loadFavorites = async () => {
+            const favorites = await AsyncStorage.getItem(favoritesKey);
+            setListFavoriteId(JSON.parse(favorites) ?? []);
+        };
+
+        loadFavorites();
+    }, []);
+
+    const handleFavoriteDeveloper = async (idDeveloper: number) => {
+        const findIndex = listFavoriteId.findIndex(id => id === idDeveloper);
+
+        if (findIndex !== -1) {
+            listFavoriteId.splice(findIndex, 1);
+            setListFavoriteId([...listFavoriteId]);
+        } else {
+            setListFavoriteId([...listFavoriteId, idDeveloper]);
+        }
+
+        try {
+            await AsyncStorage.setItem(favoritesKey, JSON.stringify(listFavoriteId));
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     const renderCard: ListRenderItem<IDeveloper> = ({ item }) => (
         <StyledCardContainer>
@@ -44,7 +75,13 @@ const DeveloperList = () => {
                     <StyledStack>{item.stack}</StyledStack>
                 </View>
                 <StyledFavoriteContainer>
-                    <StarActiveSvg style={{ marginLeft: 'auto' }} />
+                    <Pressable onPress={() => handleFavoriteDeveloper(item.id)}>
+                        {listFavoriteId.includes(item.id) ? (
+                            <StarActiveSvg style={{ marginLeft: 'auto' }} />
+                        ) : (
+                            <StarDisabledSvg style={{ marginLeft: 'auto' }} />
+                        )}
+                    </Pressable>
                 </StyledFavoriteContainer>
             </StyledCardInnerContainer>
         </StyledCardContainer>
