@@ -4,7 +4,7 @@ export interface IDeveloper {
     name: string;
     category: number;
     stack: number | string;
-    state: number;
+    state: number | string;
     description: string;
 }
 
