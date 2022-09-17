@@ -1,25 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
+import Routes from './src/routes/Routes';
 import defaultTheme from './src/theme/defaultTheme';
+import './reactotronConfig';
 
 export default function App() {
     return (
         <ThemeProvider theme={defaultTheme}>
-            <View style={styles.container}>
-                <Text>Open up App.js to start working on your app!</Text>
-                <StatusBar style="auto" />
-            </View>
+            <NavigationContainer>
+                <Routes />
+            </NavigationContainer>
         </ThemeProvider>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});

@@ -3,7 +3,12 @@ export interface IDeveloper {
     photo: string;
     name: string;
     category: number;
-    stack: number;
+    stack: number | string;
     state: number;
     description: string;
+}
+
+export interface IStack {
+    id: number;
+    label: string;
 }
