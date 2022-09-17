@@ -12,3 +12,8 @@ export interface IStack {
     id: number;
     label: string;
 }
+
+export interface IState{
+    id: number;
+    value: string;
+}
