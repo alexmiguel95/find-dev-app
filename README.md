@@ -22,7 +22,7 @@ Add gif...
 *  Expo
 *  Styled Components
 *  Axios
-*  ...
+*  React Native Testing Library
 
 ###
 &nbsp;
