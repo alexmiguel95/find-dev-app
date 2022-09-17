@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import { IDeveloper } from '../models/developer';
+import { IDeveloper, IStack } from '../models/developer';
 import api from './api';
 
 const developerApi = () => {
@@ -7,8 +7,13 @@ const developerApi = () => {
         return api.get<IDeveloper[]>('/devs');
     };
 
+    const getAllStacks = (): Promise<AxiosResponse<IStack[]>> => {
+        return api.get<IStack[]>('/stacks');
+    };
+
     return {
         getAllDeveloper,
+        getAllStacks,
     };
 };
 
