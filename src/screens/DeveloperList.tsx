@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, ListRenderItem, Pressable, View } from 'react-native';
+import { ActivityIndicator, FlatList, Linking, ListRenderItem, Pressable, View } from 'react-native';
 import styled, { useTheme } from 'styled-components/native';
 import { IDeveloper, IStack } from '../models/developer';
 import developerService from '../service/developer.service';
@@ -65,9 +65,15 @@ const DeveloperList = () => {
             <StyledDeveloperPhoto source={{ uri: `${item.photo}` }} />
             <StyledCardInnerContainer>
                 <StyledSocialIcons>
-                    <WhatsappSvg style={{ marginRight: 8 }} />
-                    <GithubSvg style={{ marginRight: 8 }} />
-                    <LinkdinSvg />
+                    <Pressable onPress={() => Linking.openURL('whatsapp://send?phone=5541900000000&text=Olá...')}>
+                        <WhatsappSvg style={{ marginRight: 8 }} />
+                    </Pressable>
+                    <Pressable onPress={() => Linking.openURL('https://github.com/alexmiguel95/find-dev-app')}>
+                        <GithubSvg style={{ marginRight: 8 }} />
+                    </Pressable>
+                    <Pressable onPress={() => Linking.openURL('https://www.linkedin.com/in/alexmiguel95/')}>
+                        <LinkdinSvg />
+                    </Pressable>
                 </StyledSocialIcons>
                 <View>
                     <StyledName>{item.name}</StyledName>

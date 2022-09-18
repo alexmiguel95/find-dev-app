@@ -3,7 +3,10 @@
 ###
 
 
-Aplicativo construído em React Native ...
+A startup fictícia Find Devs está construindo uma nova plataforma para busca de desenvolvedores e precisa de
+um app para ser lançada no mercado.
+O App deve ser construído com React Native com integração com SSO AWS Cognito e
+estar integrado a uma API https://finddev-api.herokuapp.com/
 
 Add gif...
 <p align="center">
@@ -24,14 +27,27 @@ Add gif...
 *  Axios
 *  React Native Testing Library
 
+&nbsp;
+&nbsp;
+
+<h2 align="left">API</h2>
+
+[finddev-api.herokuapp.com](https://finddev-api.herokuapp.com/)
+
 ###
 &nbsp;
 <h2 align="left">REQUISITOS</h2>
-Criar um aplicativo utilizando React Native com Typescript onde possamos:
 
-* ...
-* ...
-
+* Painel scrum com todas as tarefas organizadas e responsáveis definidos
+* Protótipo de telas no figma
+* Conexão ao cognito
+* Conectar a API REST
+* Busca de desenvolvedores
+* Refinamento de busca
+* Favoritar desenvolvedores
+* SDK publicado no Google Play Store
+* O código deve ser entregue em um repositório no Github
+* Liste as dependências e links do projeto no README
 
 &nbsp;
 
@@ -99,12 +115,33 @@ $ yarn
 &nbsp;
 
 <h2 align="left">DESENVOLVEDORES</h2>
-Alex Miguel
-&nbsp;
 
+Alex Miguel
+<br />
 https://www.linkedin.com/in/alexmiguel95
 <br />
 https://github.com/alexmiguel95
-###
 
-...
+<br />
+
+Fernando Cordeiro
+<br />
+https://www.linkedin.com/in/fernando-cordeiro-b12aab68/
+<br />
+https://github.com/fernandohtcordeiro
+
+<br />
+
+Isaac Cruz
+<br />
+https://www.linkedin.com/in/isaaccruzz/
+<br />
+https://github.com/IsaacCruzLM
+
+<br />
+
+Kevin Christian
+<br />
+https://www.linkedin.com/in/kevinnchristian/
+<br />
+https://github.com/kevinnchristian
