@@ -63,6 +63,7 @@ const ButtonRegister = styled.TouchableOpacity`
 
 const ButtonLinkedIn = styled.TouchableOpacity`
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   width: ${widthDefaultButtons};
@@ -73,6 +74,7 @@ const ButtonLinkedIn = styled.TouchableOpacity`
 
 const ButtonGitHub = styled.TouchableOpacity`
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   width: ${widthDefaultButtons};

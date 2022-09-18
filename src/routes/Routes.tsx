@@ -13,6 +13,6 @@ const Routes = () => {
             <Screen name="LISTA" component={DeveloperList} />
         </Navigator>
     );
- };
-  
- export default Routes;
+};
+
+export default Routes;

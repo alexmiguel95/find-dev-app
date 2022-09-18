@@ -5,7 +5,7 @@ import { IDeveloper, IStack } from '../models/developer';
 import developerService from '../service/developer.service';
 import WhatsappSvg from '../assets/icons/whatsapp.svg';
 import GithubSvg from '../assets/icons/github.svg';
-import LinkdinSvg from '../assets/icons/linkdin.svg';
+import LinkdinSvg from '../assets/icons/linkedin.svg';
 import StarActiveSvg from '../assets/icons/star-active.svg';
 import StarDisabledSvg from '../assets/icons/star-disabled.svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';

@@ -1,7 +1,9 @@
 import {
-  View,
-  Text,
+  TouchableOpacity,
 } from 'react-native';
+
+import LinkedinSvg from '../../assets/icons/linkedin.svg';
+import GitHubSvg from '../../assets/icons/github.svg';
 
 import {
   Container,
@@ -31,17 +33,25 @@ const SignIn = () => {
       </ContentFieldsButtons>
 
       <ContentForgotPassword>
-        <TextBold>Esqueceu a senha</TextBold>
+        <TouchableOpacity
+          onPress={() => alert('Esqueceu a senha')}
+        >
+          <TextBold>Esqueceu a senha</TextBold>
+        </TouchableOpacity>
       </ContentForgotPassword>
 
       <ContentFieldsButtons>
-        <ButtonLogin>
+        <ButtonLogin
+          onPress={() => alert('Entrar')}
+        >
           <TextBoldButton>ENTRAR</TextBoldButton>
         </ButtonLogin>
       </ContentFieldsButtons>
 
       <ContentFieldsButtons>
-        <ButtonRegister>
+        <ButtonRegister
+          onPress={() => alert('Cadastrar')}
+        >
           <TextBoldButton>CADASTRAR</TextBoldButton>
         </ButtonRegister>
       </ContentFieldsButtons>
@@ -50,13 +60,19 @@ const SignIn = () => {
         <TextBold>CADASTRO SIMPLIFICADO</TextBold>
 
         <ContentFieldsButtons>
-          <ButtonLinkedIn>
+          <ButtonLinkedIn
+            onPress={() => alert('Entrar com LinkedIn')}
+          >
+            <LinkedinSvg style={{ width: 32, marginRight: 4 }} />
             <TextBoldButton>LINKEDIN</TextBoldButton>
           </ButtonLinkedIn>
         </ContentFieldsButtons>
 
         <ContentFieldsButtons>
-          <ButtonGitHub>
+          <ButtonGitHub
+            onPress={() => alert('Entrar com GitHub')}
+          >
+            <GitHubSvg style={{ width: 32, marginRight: 4 }} />
             <TextBoldButton>GITHUB</TextBoldButton>
           </ButtonGitHub>
         </ContentFieldsButtons>
