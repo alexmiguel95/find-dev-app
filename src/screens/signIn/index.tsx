@@ -1,10 +1,4 @@
-import {
-  TouchableOpacity,
-} from 'react-native';
-import Amplify, { Auth } from 'aws-amplify';
-import { withAuthenticator } from 'aws-amplify-react-native';
-
-import awsconfig from '../../config/aws-exports';
+import { TouchableOpacity } from 'react-native';
 
 import LinkedinSvg from '../../assets/icons/linkedin.svg';
 import GitHubSvg from '../../assets/icons/github.svg';
@@ -23,7 +17,6 @@ import {
   TextBoldButton,
 } from './style';
 
-Amplify.configure(awsconfig);
 
 const SignIn = () => {
   return (
@@ -67,7 +60,7 @@ const SignIn = () => {
 
         <ContentFieldsButtons>
           <ButtonLinkedIn
-            onPress={() => alert('Entrar com LinkedIn')}
+            onPress={() => alert('Login Social com LinkedIn')}
           >
             <LinkedinSvg style={{ width: 32, marginRight: 4 }} />
             <TextBoldButton>LINKEDIN</TextBoldButton>
@@ -76,7 +69,7 @@ const SignIn = () => {
 
         <ContentFieldsButtons>
           <ButtonGitHub
-            onPress={() => alert('Entrar com GitHub')}
+            onPress={() => alert('Login Social com GitHub')}
           >
             <GitHubSvg style={{ width: 32, marginRight: 4 }} />
             <TextBoldButton>GITHUB</TextBoldButton>
@@ -87,4 +80,4 @@ const SignIn = () => {
   );
 }
 
-export default withAuthenticator(SignIn);
+export default SignIn;
