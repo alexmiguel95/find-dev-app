@@ -1,6 +1,10 @@
 import {
   TouchableOpacity,
 } from 'react-native';
+import Amplify, { Auth } from 'aws-amplify';
+import { withAuthenticator } from 'aws-amplify-react-native';
+
+import awsconfig from '../../config/aws-exports';
 
 import LinkedinSvg from '../../assets/icons/linkedin.svg';
 import GitHubSvg from '../../assets/icons/github.svg';
@@ -18,6 +22,8 @@ import {
   TextBold,
   TextBoldButton,
 } from './style';
+
+Amplify.configure(awsconfig);
 
 const SignIn = () => {
   return (
@@ -81,4 +87,4 @@ const SignIn = () => {
   );
 }
 
-export default SignIn;
+export default withAuthenticator(SignIn);
