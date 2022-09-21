@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Auth } from 'aws-amplify';
 
+import Loader from '../../components/Loader';
+
 import {
   Container,
   ContentFieldsButtons,
@@ -20,7 +22,7 @@ interface IRegisterData {
 }
 
 const SignUp = () => {
-  const [isLoad, setIsLoad] = useState(false);
+  const [isLoad, setIsLoad] = useState(true);
   const [isConfirmCode, setIsConfirmCode] = useState(false);
   const [userData, setUserData] = useState<IRegisterData>({
     username: '',
@@ -76,9 +78,7 @@ const SignUp = () => {
       {
         isLoad ? (
           <Container>
-            <TextTitle>
-              Aguarde Carregando...
-            </TextTitle>
+            <Loader />
           </Container >
         ) : (
           <>
