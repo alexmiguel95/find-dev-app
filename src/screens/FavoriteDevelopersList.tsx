@@ -13,7 +13,7 @@ import { useFocusEffect } from '@react-navigation/native';
 
 const favoritesKey = '@finddev:favoriteslist';
 
-const DeveloperList = () => {
+const FavoriteDevelopersList = () => {
     const theme = useTheme();
 
     const [developerList, setDeveloperList] = useState<IDeveloper[]>([]);
@@ -41,6 +41,15 @@ const DeveloperList = () => {
         }, [stacks])
     );
 
+    useEffect(() => {
+        if (stacks.length > 0) {
+            developerService.getAllDeveloper().then(response => {
+                response.map(developerData => (developerData.stack = stacks.filter(stack => stack.id === developerData.stack)[0].label));
+                setDeveloperList(response);
+            });
+        }
+    }, [stacks]);
+
     useFocusEffect(
         useCallback(() => {
             const loadFavorites = async () => {
@@ -60,8 +69,7 @@ const DeveloperList = () => {
             listFavoriteId.splice(findIndex, 1);
             setListFavoriteId([...listFavoriteId]);
         } else {
-            listFavoriteId.push(idDeveloper);
-            setListFavoriteId([...listFavoriteId]);
+            setListFavoriteId([...listFavoriteId, idDeveloper]);
         }
 
         try {
@@ -109,7 +117,7 @@ const DeveloperList = () => {
             {isLoading ? (
                 <ActivityIndicator color={theme.colors.secondary} size="large" />
             ) : (
-                <FlatList data={developerList} renderItem={renderCard} />
+                <FlatList data={developerList.filter(developer => listFavoriteId.includes(developer.id))} renderItem={renderCard} />
             )}
         </StyledContainer>
     );
@@ -174,4 +182,4 @@ const StyledFavoriteContainer = styled.View`
     margin-top: -20px;
 `;
 
-export default DeveloperList;
+export default FavoriteDevelopersList;
