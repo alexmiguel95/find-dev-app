@@ -1,6 +1,6 @@
 {
   "auth": {
-    "finddevappb7b25ce4": {
+    "finddevappnativea2f806aa": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

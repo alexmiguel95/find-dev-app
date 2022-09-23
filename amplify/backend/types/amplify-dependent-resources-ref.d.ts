@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "auth": {
-        "finddevappb7b25ce4": {
+        "finddevappnativea2f806aa": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
