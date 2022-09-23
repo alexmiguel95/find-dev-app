@@ -5,11 +5,15 @@ require File.join(File.dirname(`node --print "require.resolve('@react-native-com
 require 'json'
 podfile_properties = JSON.parse(File.read(File.join(__dir__, 'Podfile.properties.json'))) rescue {}
 
-platform :ios, podfile_properties['ios.deploymentTarget'] || '12.4'
+platform :ios, '13.0'
 install! 'cocoapods',
   :deterministic_uuids => false
 
 target 'finddevapp' do
+  # React Native Maps dependencies
+  rn_maps_path = '../node_modules/react-native-maps'
+  pod 'react-native-google-maps', :path => rn_maps_path
+
   use_expo_modules!
   config = use_native_modules!
 
