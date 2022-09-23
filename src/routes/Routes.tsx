@@ -13,7 +13,7 @@ const { Navigator, Screen } = createStackNavigator();
 
 const Routes = () => {
     return (
-        <Navigator initialRouteName="Entrar">
+        <Navigator initialRouteName="Entrar" screenOptions={{ headerShown: false }}>
             <Screen name="Entrar" component={SignIn} />
             <Screen name="Cadastrar" component={SignUp} />
             <Screen name="Menu" component={DrawerRoutes} />
