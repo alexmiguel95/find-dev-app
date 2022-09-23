@@ -4,6 +4,7 @@ import Home from '../screens/home';
 import DeveloperList from '../screens/DeveloperList';
 import { Image } from 'react-native';
 import Logout from '../screens/Logout';
+import FavoriteDevelopersList from '../screens/FavoriteDevelopersList';
 
 const Drawer = createDrawerNavigator();
 
@@ -33,7 +34,7 @@ export function Routes() {
         >
             <Drawer.Screen name="Home" component={Home} />
             <Drawer.Screen name="Lista" component={DeveloperList} />
-            <Drawer.Screen name="Favoritos" component={Home} />
+            <Drawer.Screen name="Favoritos" component={FavoriteDevelopersList} />
             <Drawer.Screen name="Logout" component={Logout} />
         </Drawer.Navigator>
     );
