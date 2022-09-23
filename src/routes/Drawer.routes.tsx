@@ -1,19 +1,18 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import 'react-native-gesture-handler';
-
 import Home from '../screens/home';
 import DeveloperList from '../screens/DeveloperList';
-
 import { Image } from 'react-native';
+import Logout from '../screens/Logout';
 
 const Drawer = createDrawerNavigator();
 
 export function Routes() {
     return (
         <Drawer.Navigator
-            initialRouteName='Lista'
+            initialRouteName="Lista"
             screenOptions={({ route }) => ({
-                drawerIcon: ({ focused, color, size }) => {
+                drawerIcon: ({ focused }) => {
                     let iconName;
 
                     if (route.name === 'Home') {
@@ -32,11 +31,10 @@ export function Routes() {
                 drawerInactiveTintColor: '#9035E0',
             })}
         >
-
-            <Drawer.Screen name="Home" component={Home} />
             <Drawer.Screen name="Lista" component={DeveloperList} />
+            <Drawer.Screen name="Home" component={Home} />
             <Drawer.Screen name="Favoritos" component={Home} />
-            <Drawer.Screen name="Logout" component={Home} />
+            <Drawer.Screen name="Logout" component={Logout} />
         </Drawer.Navigator>
     );
 }
