@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import { Auth } from 'aws-amplify';
 
 import Loader from '../../components/Loader';
@@ -14,6 +15,7 @@ import {
 } from './style';
 
 interface IRegisterData {
+  name: string;
   username: string;
   email: string;
   password: string;
@@ -21,10 +23,11 @@ interface IRegisterData {
   code?: string;
 }
 
-const SignUp = () => {
-  const [isLoad, setIsLoad] = useState(true);
+const SignUp = ({ navigation }) => {
+  const [isLoad, setIsLoad] = useState(false);
   const [isConfirmCode, setIsConfirmCode] = useState(false);
   const [userData, setUserData] = useState<IRegisterData>({
+    name: '',
     username: '',
     email: '',
     password: '',
@@ -32,21 +35,22 @@ const SignUp = () => {
   });
 
   async function signUp(userData: IRegisterData) {
-    const { username, email, password, phone_number } = userData;
+    const { name, email, password, phone_number } = userData;
     setIsLoad(!isLoad);
 
     try {
       const { user } = await Auth.signUp({
-        username,
+        username: email,
         password,
         attributes: {
+          name,
           email,
-          phone_number
+          phone_number: '+55' + phone_number
         },
         autoSignIn: {
           enabled: true
         }
-      })
+      });
 
       setIsConfirmCode(!isConfirmCode);
 
@@ -59,16 +63,19 @@ const SignUp = () => {
   };
 
   async function confirmSignUp(userData: IRegisterData) {
-    setIsLoad(!isLoad);
+    setIsLoad(true);
     const { username, code } = userData;
 
     try {
-      Auth.confirmSignUp(username, code);
+      await Auth.confirmSignUp(username, code);
+      navigation.navigate('Lista');
       console.log('✅ Confirmado com sucesso!');
+      setIsConfirmCode(false);
+
     } catch (error) {
       console.error(`❌ Erro ao confirmar: ${error.message}`);
     } finally {
-      setIsLoad(false)
+      setIsLoad(false);
       console.log('❕ Confirmação encerrada');
     }
   }
@@ -88,8 +95,7 @@ const SignUp = () => {
                   <ContentFieldsButtons>
                     <TextBold>Nome:</TextBold>
                     <Field
-                      onChangeText={value => setUserData({ ...userData, username: value })}
-                      value={userData.username}
+                      onChangeText={value => setUserData({ ...userData, name: value })}
                       keyboardType='default'
                     />
                   </ContentFieldsButtons>
@@ -97,8 +103,7 @@ const SignUp = () => {
                   <ContentFieldsButtons>
                     <TextBold>Email:</TextBold>
                     <Field
-                      onChangeText={value => setUserData({ ...userData, email: value })}
-                      value={userData.email}
+                      onChangeText={value => setUserData({ ...userData, email: value, username: value })}
                       keyboardType='email-address'
                     />
                   </ContentFieldsButtons>
@@ -107,7 +112,6 @@ const SignUp = () => {
                     <TextBold>Senha:</TextBold>
                     <Field
                       onChangeText={value => setUserData({ ...userData, password: value })}
-                      value={userData.password}
                       secureTextEntry={true}
                       keyboardType='default'
                     />
@@ -117,7 +121,6 @@ const SignUp = () => {
                     <TextBold>Celular:</TextBold>
                     <Field
                       onChangeText={value => setUserData({ ...userData, phone_number: value })}
-                      value={userData.phone_number}
                       keyboardType='phone-pad'
                     />
                   </ContentFieldsButtons>
@@ -140,7 +143,6 @@ const SignUp = () => {
                     <TextBold>Código:</TextBold>
                     <Field
                       onChangeText={value => setUserData({ ...userData, code: value })}
-                      value={userData.code}
                       keyboardType='numeric'
                     />
                   </ContentFieldsButtons>
