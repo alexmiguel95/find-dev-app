@@ -9,7 +9,7 @@ O App deve ser construído com React Native com integração com SSO AWS Cognito
 estar integrado a uma API https://finddev-api.herokuapp.com/
 
 <p align="center">
-  <img src="/demonstration.gif" width="620" height="450">
+  <img src="/demonstration.gif" width="320" height="550">
 </p>
 
 *********************************************************************************************************
