@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-finddevappnative-dev-203447-authRole",
+      "UnauthRoleArn": "arn:aws:iam::065151626749:role/amplify-finddevappnative-dev-203447-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::065151626749:role/amplify-finddevappnative-dev-203447-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-finddevappnative-dev-203447-deployment",
+      "UnauthRoleName": "amplify-finddevappnative-dev-203447-unauthRole",
+      "StackName": "amplify-finddevappnative-dev-203447",
+      "StackId": "arn:aws:cloudformation:us-east-1:065151626749:stack/amplify-finddevappnative-dev-203447/265920d0-3acf-11ed-b11d-0e429b5bf1fb",
+      "AmplifyAppId": "d2joi1xq1wvhpr"
+    },
+    "categories": {
+      "auth": {
+        "finddevappnativea2f806aa": {}
+      }
+    }
+  }
+}

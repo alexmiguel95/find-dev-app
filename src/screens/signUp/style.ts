@@ -2,7 +2,9 @@ import { Dimensions, StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
 import defaultTheme from '../../theme/defaultTheme';
 
-const widthDefaultButtons = Math.round(Dimensions.get('window').width - 90) + 'px';
+const widthDefaultFieldsAndButtons = Math.round(
+  Dimensions.get('window').width - 90
+) + 'px';
 
 const Container = styled.View`
   height: 100%;
@@ -18,7 +20,7 @@ const ContentFieldsButtons = styled.View`
 
 const Field = styled.TextInput`
   height: 40px;
-  width: ${widthDefaultButtons};
+  width: ${widthDefaultFieldsAndButtons};
   background-color: #D9D9D9;
   border: 3px solid ${defaultTheme.colors.primary};
   border-radius: 8px;
@@ -29,11 +31,19 @@ const ButtonRegister = styled.TouchableOpacity`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${widthDefaultButtons};
+  width: ${widthDefaultFieldsAndButtons};
   height: 40px;
   background-color: ${defaultTheme.colors.secondary};
   border-radius: 8px;
   margin-top: 20px;
+`;
+
+const TextTitle = styled.Text`
+  color: ${defaultTheme.colors.primary};
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 20px;
 `;
 
 const TextBold = styled.Text`
@@ -55,6 +65,7 @@ export {
   ContentFieldsButtons,
   Field,
   ButtonRegister,
+  TextTitle,
   TextBold,
   TextBoldButton,
 };
