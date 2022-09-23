@@ -24,7 +24,8 @@ estar integrado a uma API https://finddev-api.herokuapp.com/
 *  Expo
 *  Styled Components
 *  Axios
-*  React Native Testing Library
+*  Async Storage
+*  Cognito
 
 &nbsp;
 &nbsp;
