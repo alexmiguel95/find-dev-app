@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from 'styled-components/native';
+import Routes from './src/routes/Routes';
 import { Routes as DeawerRoutes } from './src/routes/Drawer.routes';
 import defaultTheme from './src/theme/defaultTheme';
 import './reactotronConfig';
@@ -12,7 +13,7 @@ export default function App() {
     return (
         <ThemeProvider theme={defaultTheme}>
             <NavigationContainer>
-                <DeawerRoutes />
+                <Routes />
             </NavigationContainer>
         </ThemeProvider>
     );
