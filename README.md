@@ -8,9 +8,8 @@ um app para ser lançada no mercado.
 O App deve ser construído com React Native com integração com SSO AWS Cognito e
 estar integrado a uma API https://finddev-api.herokuapp.com/
 
-Add gif...
 <p align="center">
-  <img src="/demonstration.gif" width="620">
+  <img src="/demonstration.gif" width="620" height="450">
 </p>
 
 *********************************************************************************************************
