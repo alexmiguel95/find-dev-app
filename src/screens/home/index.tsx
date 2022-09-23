@@ -55,9 +55,9 @@ export default function Maps() {
                             latitude: -27.544152055111326,
                             longitude: -48.496080176629214,
                         }}
-                        onPress={() => navigation.navigate('Perfil', { item: developerList[0] })}
+                        onPress={() => navigation.navigate('Perfil', { item: developerList[1] })}
                     >
-                        <Callout onPress={() => navigation.navigate('Perfil', { item: developerList[0] })} />
+                        <Callout onPress={() => navigation.navigate('Perfil', { item: developerList[1] })} />
                     </Marker>
 
                     <Marker
@@ -66,9 +66,9 @@ export default function Maps() {
                             latitude: -27.541374290196053,
                             longitude: -48.50039316860574,
                         }}
-                        onPress={() => navigation.navigate('Perfil', { item: developerList[0] })}
+                        onPress={() => navigation.navigate('Perfil', { item: developerList[2] })}
                     >
-                        <Callout onPress={() => navigation.navigate('Perfil', { item: developerList[0] })} />
+                        <Callout onPress={() => navigation.navigate('Perfil', { item: developerList[2] })} />
                     </Marker>
 
                     <Marker
@@ -77,9 +77,9 @@ export default function Maps() {
                             latitude: -27.547329275426904,
                             longitude: -48.500800864383876,
                         }}
-                        onPress={() => navigation.navigate('Perfil', { item: developerList[0] })}
+                        onPress={() => navigation.navigate('Perfil', { item: developerList[3] })}
                     >
-                        <Callout onPress={() => navigation.navigate('Perfil', { item: developerList[0] })} />
+                        <Callout onPress={() => navigation.navigate('Perfil', { item: developerList[3] })} />
                     </Marker>
                 </MapView>
             )}
