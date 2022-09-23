@@ -12,7 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const favoritesKey = '@finddev:favoriteslist';
 
-const DeveloperList = () => {
+const DeveloperList = ({ navigation }) => {
     const theme = useTheme();
 
     const [developerList, setDeveloperList] = useState<IDeveloper[]>([]);
@@ -61,36 +61,38 @@ const DeveloperList = () => {
     };
 
     const renderCard: ListRenderItem<IDeveloper> = ({ item }) => (
-        <StyledCardContainer>
-            <StyledDeveloperPhoto source={{ uri: `${item.photo}` }} />
-            <StyledCardInnerContainer>
-                <StyledSocialIcons>
-                    <Pressable onPress={() => Linking.openURL('whatsapp://send?phone=5541900000000&text=Olá...')}>
-                        <WhatsappSvg style={{ marginRight: 8 }} />
-                    </Pressable>
-                    <Pressable onPress={() => Linking.openURL('https://github.com/alexmiguel95/find-dev-app')}>
-                        <GithubSvg style={{ marginRight: 8 }} />
-                    </Pressable>
-                    <Pressable onPress={() => Linking.openURL('https://www.linkedin.com/in/alexmiguel95/')}>
-                        <LinkdinSvg />
-                    </Pressable>
-                </StyledSocialIcons>
-                <View>
-                    <StyledName>{item.name}</StyledName>
-                    <StyledDescription>{item.description}</StyledDescription>
-                    <StyledStack>{item.stack}</StyledStack>
-                </View>
-                <StyledFavoriteContainer>
-                    <Pressable onPress={() => handleFavoriteDeveloper(item.id)}>
-                        {listFavoriteId.includes(item.id) ? (
-                            <StarActiveSvg style={{ marginLeft: 'auto' }} />
-                        ) : (
-                            <StarDisabledSvg style={{ marginLeft: 'auto' }} />
-                        )}
-                    </Pressable>
-                </StyledFavoriteContainer>
-            </StyledCardInnerContainer>
-        </StyledCardContainer>
+        <Pressable onPress={() => navigation.navigate("PERFIL", { item })}>
+            <StyledCardContainer>
+                <StyledDeveloperPhoto source={{ uri: `${item.photo}` }} />
+                <StyledCardInnerContainer>
+                    <StyledSocialIcons>
+                        <Pressable onPress={() => Linking.openURL('whatsapp://send?phone=5541900000000&text=Olá...')}>
+                            <WhatsappSvg style={{ marginRight: 8 }} />
+                        </Pressable>
+                        <Pressable onPress={() => Linking.openURL('https://github.com/alexmiguel95/find-dev-app')}>
+                            <GithubSvg style={{ marginRight: 8 }} />
+                        </Pressable>
+                        <Pressable onPress={() => Linking.openURL('https://www.linkedin.com/in/alexmiguel95/')}>
+                            <LinkdinSvg />
+                        </Pressable>
+                    </StyledSocialIcons>
+                    <View>
+                        <StyledName>{item.name}</StyledName>
+                        <StyledDescription>{item.description}</StyledDescription>
+                        <StyledStack>{item.stack}</StyledStack>
+                    </View>
+                    <StyledFavoriteContainer>
+                        <Pressable onPress={() => handleFavoriteDeveloper(item.id)}>
+                            {listFavoriteId.includes(item.id) ? (
+                                <StarActiveSvg style={{ marginLeft: 'auto' }} />
+                            ) : (
+                                <StarDisabledSvg style={{ marginLeft: 'auto' }} />
+                            )}
+                        </Pressable>
+                    </StyledFavoriteContainer>
+                </StyledCardInnerContainer>
+            </StyledCardContainer>
+        </Pressable>
     );
 
     return (
@@ -113,7 +115,7 @@ const StyledContainer = styled.View`
 const StyledCardContainer = styled.View`
     flex-direction: row;
 
-    height: 140px;
+    min-height: 140px;
     width: 300px;
     margin: 0 auto 24px auto;
     padding: 15px;
