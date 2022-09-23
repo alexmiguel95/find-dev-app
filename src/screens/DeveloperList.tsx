@@ -113,7 +113,7 @@ const StyledContainer = styled.View`
 const StyledCardContainer = styled.View`
     flex-direction: row;
 
-    height: 140px;
+    min-height: 140px;
     width: 300px;
     margin: 0 auto 24px auto;
     padding: 15px;
