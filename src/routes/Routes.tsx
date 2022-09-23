@@ -4,9 +4,9 @@ import SignIn from '../screens/signIn';
 import SignUp from '../screens/signUp';
 
 export type TypeRoute = {
-    Home: undefined;
-    SignIn: undefined;
-    SignUp: undefined;
+    Entrar: undefined;
+    Cadastrar: undefined;
+    Menu: undefined;
 };
 
 const { Navigator, Screen } = createStackNavigator();

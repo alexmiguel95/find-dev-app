@@ -1,10 +1,9 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import 'react-native-gesture-handler';
-
 import Home from '../screens/home';
 import DeveloperList from '../screens/DeveloperList';
-
 import { Image } from 'react-native';
+import Logout from '../screens/Logout';
 
 const Drawer = createDrawerNavigator();
 
@@ -35,7 +34,7 @@ export function Routes() {
             <Drawer.Screen name="Lista" component={DeveloperList} />
             <Drawer.Screen name="Home" component={Home} />
             <Drawer.Screen name="Favoritos" component={Home} />
-            <Drawer.Screen name="Logout" component={Home} />
+            <Drawer.Screen name="Logout" component={Logout} />
         </Drawer.Navigator>
     );
 }
