@@ -9,7 +9,7 @@ export function Routes() {
     return (
         <Drawer.Navigator
             screenOptions={({ route }) => ({
-                drawerIcon: ({ focused, color, size }) => {
+                drawerIcon: ({ focused }) => {
                     let iconName;
 
                     if (route.name === 'Home') {
@@ -28,8 +28,8 @@ export function Routes() {
                 drawerInactiveTintColor: '#9035E0',
             })}
         >
-            <Drawer.Screen name="Home" component={Home} />
             <Drawer.Screen name="Lista" component={DeveloperList} />
+            <Drawer.Screen name="Home" component={Home} />
             <Drawer.Screen name="Favoritos" component={Home} />
             <Drawer.Screen name="Logout" component={Home} />
         </Drawer.Navigator>
