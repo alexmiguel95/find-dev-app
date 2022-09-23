@@ -1,8 +1,10 @@
 import { createStackNavigator } from '@react-navigation/stack';
+import { Routes as DrawerRoutes } from './Drawer.routes';
 import SignIn from '../screens/signIn';
 import SignUp from '../screens/signUp';
 
 export type TypeRoute = {
+    Home: undefined;
     SignIn: undefined;
     SignUp: undefined;
 };
@@ -14,6 +16,7 @@ const Routes = () => {
         <Navigator initialRouteName="Entrar">
             <Screen name="Entrar" component={SignIn} />
             <Screen name="Cadastrar" component={SignUp} />
+            <Screen name="Menu" component={DrawerRoutes} />
         </Navigator>
     );
 };

@@ -1,6 +1,9 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import 'react-native-gesture-handler';
+
 import Home from '../screens/home';
 import DeveloperList from '../screens/DeveloperList';
+
 import { Image } from 'react-native';
 
 const Drawer = createDrawerNavigator();
@@ -8,6 +11,7 @@ const Drawer = createDrawerNavigator();
 export function Routes() {
     return (
         <Drawer.Navigator
+            initialRouteName="Lista"
             screenOptions={({ route }) => ({
                 drawerIcon: ({ focused }) => {
                     let iconName;
