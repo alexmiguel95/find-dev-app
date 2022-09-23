@@ -44,7 +44,7 @@ const SignIn = ({ navigation }) => {
 
       if (user) {
         console.log(`✅ Usuário fez login no sistema.`);
-        navigation.navigate('Lista');
+        navigation.navigate('Menu');
         setIsLoad(false);
       }
 
