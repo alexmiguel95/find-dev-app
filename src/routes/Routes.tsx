@@ -7,6 +7,7 @@ export type TypeRoute = {
     Entrar: undefined;
     Cadastrar: undefined;
     Menu: undefined;
+    Perfil: { id: number }
 };
 
 const { Navigator, Screen } = createStackNavigator();
@@ -17,6 +18,7 @@ const Routes = () => {
             <Screen name="Entrar" component={SignIn} />
             <Screen name="Cadastrar" component={SignUp} />
             <Screen name="Menu" component={DrawerRoutes} />
+            <Screen name="Perfil" component={DrawerRoutes} />
         </Navigator>
     );
 };

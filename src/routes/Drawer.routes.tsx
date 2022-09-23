@@ -31,8 +31,8 @@ export function Routes() {
                 drawerInactiveTintColor: '#9035E0',
             })}
         >
-            <Drawer.Screen name="Lista" component={DeveloperList} />
             <Drawer.Screen name="Home" component={Home} />
+            <Drawer.Screen name="Lista" component={DeveloperList} />
             <Drawer.Screen name="Favoritos" component={Home} />
             <Drawer.Screen name="Logout" component={Logout} />
         </Drawer.Navigator>
